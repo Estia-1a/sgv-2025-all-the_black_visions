@@ -1,0 +1,139 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to bottom right, #dfe9f3, #ffffff);
+    margin: 0;
+    padding: 30px;
+}
+#netflux-logo {
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;
+    color: #d40000; /* rouge style Netflix */
+    letter-spacing: 4px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+    font-family: Arial, Helvetica, sans-serif;
+    }
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto 40px auto;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #0056b3;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #003f80;
+    text-decoration: underline;
+}
+
+
+
+form {
+    max-width: 420px;
+    margin: 25px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 14px;
+    border: 1px solid #d0d4d9;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+
+h2 {
+    text-align: center;
+    color: #1e5bab;
+    margin-top: 40px;
+}
+
+
+
+label {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+input[type="email"],
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    margin-bottom: 18px;
+    border-radius: 8px;
+    border: 1px solid #b6bec8;
+    background-color: #f8fafc;
+    transition: 0.2s ease;
+}
+
+input[type="email"]:focus,
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #1e5bab;
+    outline: none;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px rgba(30, 91, 171, 0.3);
+}
+
+
+
+input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background: #1e5bab;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.25s ease;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover {
+    background: #154a8b;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+
+p {
+    text-align: center;
+}
+
+p a {
+    color: #1e5bab;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #c9cdd2;
+    margin: 50px auto;
+    width: 70%;
+}
