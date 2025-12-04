@@ -1,0 +1,184 @@
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Un fond léger pour simuler l'extérieur de la page */
+    margin: 0;
+    padding: 0;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* 1. Suppression de la simulation de l'interface du navigateur */
+/* Les classes .browser-header, .browser-controls, .control-btn, .browser-address, etc. sont retirées */
+
+/* Conteneur principal pour la page */
+.container {
+    background-color: #fff;
+    width: 900px; /* Largeur fixe */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    padding-top: 20px; /* Réduction du padding car l'en-tête du navigateur n'est plus là */
+    box-sizing: border-box;
+    border: 1px solid #ccc; /* Bordure générale pour l'effet Wireframe */
+    min-height: 700px; /* Hauteur minimale pour l'effet */
+    position: relative;
+    /* Centré dans le body grâce aux styles flex du body */
+}
+
+/* 2. Titre et Bouton Accueil */
+.accueil-btn {
+    background-color: #ddd;
+    border: 1px solid #aaa;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    position: absolute;
+    top: 20px; /* Position ajustée en haut du conteneur */
+    left: 20px;
+}
+
+.main-title {
+    text-align: center;
+    font-size: 28px;
+    margin-top: 50px; /* Marge supérieure pour éloigner du bouton Accueil */
+    margin-bottom: 30px;
+    font-weight: normal;
+}
+
+.cart-icon {
+    font-size: 24px;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+/* 3. Mise en page principale (Articles/Livraison + Résumé) */
+.cart-layout {
+    display: flex;
+    gap: 30px;
+}
+
+.main-content {
+    flex: 3; /* Prend environ 60% de la largeur */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.order-summary-sidebar {
+    flex: 2; /* Prend environ 40% de la largeur */
+    padding: 20px;
+    border: 1px solid #000; /* Bordure pour le bloc Résumé */
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+}
+
+.section-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #000;
+}
+
+/* 4. Section Articles dans le panier */
+.cart-items-section {
+    min-height: 200px; /* Hauteur pour simuler l'espace du panier */
+}
+
+.cart-items-placeholder {
+    border: 1px solid #000;
+    min-height: 150px;
+}
+
+/* 5. Section Informations de livraison */
+.delivery-info-section {
+    margin-top: 20px;
+}
+
+.delivery-address label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.delivery-address input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+.delivery-mode ul {
+    list-style: none;
+    padding: 0;
+}
+
+.delivery-mode li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.delivery-mode li label {
+    flex-grow: 1;
+    margin-left: 5px;
+}
+
+/* 6. Section Résumé de la commande */
+.summary-sub-section h3 {
+    font-size: 14px;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+.item-line {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.summary-details hr {
+    border: none;
+    border-top: 1px solid #000;
+    margin: 10px 0;
+}
+
+.total-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.total-section h3 {
+    font-size: 18px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.total-amount {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.payment-btn {
+    background-color: #000;
+    color: #fff;
+    padding: 15px 10px;
+    border: none;
+    width: 100%;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+}
