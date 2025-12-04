@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Espace membre</title>
+</head>
+<body>
+<!-- Créer compte -->
+
+<h2 id="creer-compte">Créer un compte</h2>
+
+<p>Remplissez ce formulaire pour créer votre compte.</p>
+
+<form>
+    <fieldset>
+        <legend>Inscription</legend>
+
+        <label for="pseudo">Pseudo :</label><br>
+        <input type="text" id="pseudo" placeholder="Votre nom d'utilisateur" required><br><br>
+
+        <label for="email-inscription">E-mail :</label><br>
+        <input type="email" id="email-inscription" placeholder="exemple@mail.com" required><br><br>
+
+        <label for="mdp-inscription">Mot de passe :</label><br>
+        <input type="password" id="mdp-inscription" placeholder="Créer un mot de passe" required><br><br>
+
+        <label for="confirmation-mdp">Confirmer le mot de passe :</label><br>
+        <input type="password" id="confirmation-mdp" placeholder="Retapez le mot de passe" required><br><br>
+
+        <input type="submit" value="Créer mon compte">
+    </fieldset>
+</form>
+
+<p>
+    Vous avez déjà un compte ? <a href="#connexion">Se connecter</a>
+</p>
+
+<hr>
+
