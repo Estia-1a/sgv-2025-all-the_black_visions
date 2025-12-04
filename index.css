@@ -4,6 +4,17 @@ body {
     margin: 0;
     padding: 30px;
 }
+#netflux-logo {
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;
+    color: #d40000; /* rouge style Netflix */
+    letter-spacing: 4px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+    font-family: Arial, Helvetica, sans-serif;
+    }
 
 h1 {
     text-align: center;
