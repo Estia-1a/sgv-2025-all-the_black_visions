@@ -1,34 +1,36 @@
-/* Styles généraux */
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4; /* Un fond léger pour simuler l'extérieur de la page */
-    margin: 0;
+    background-color: #f4f4f4; 
     padding: 0;
     color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    flex-direction: column; 
 }
 
-/* 1. Suppression de la simulation de l'interface du navigateur */
-/* Les classes .browser-header, .browser-controls, .control-btn, .browser-address, etc. sont retirées */
 
-/* Conteneur principal pour la page */
+.netflux-logo-img {
+    display: block; 
+    width: 200px; 
+    margin: 30px auto 50px auto; 
+}
+
 .container {
     background-color: #fff;
-    width: 900px; /* Largeur fixe */
+    width: 900px; 
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     padding: 20px;
-    padding-top: 20px; /* Réduction du padding car l'en-tête du navigateur n'est plus là */
+    padding-top: 20px; 
     box-sizing: border-box;
-    border: 1px solid #ccc; /* Bordure générale pour l'effet Wireframe */
-    min-height: 700px; /* Hauteur minimale pour l'effet */
+    border: 1px solid #ccc; 
+    min-height: 700px; 
     position: relative;
-    /* Centré dans le body grâce aux styles flex du body */
+    
 }
 
-/* 2. Titre et Bouton Accueil */
 .accueil-btn {
     background-color: #ddd;
     border: 1px solid #aaa;
@@ -36,14 +38,14 @@ body {
     cursor: pointer;
     font-size: 14px;
     position: absolute;
-    top: 20px; /* Position ajustée en haut du conteneur */
+    top: 20px; 
     left: 20px;
 }
 
 .main-title {
     text-align: center;
     font-size: 28px;
-    margin-top: 50px; /* Marge supérieure pour éloigner du bouton Accueil */
+    margin-top: 50px; 
     margin-bottom: 30px;
     font-weight: normal;
 }
@@ -54,23 +56,23 @@ body {
     margin-left: 10px;
 }
 
-/* 3. Mise en page principale (Articles/Livraison + Résumé) */
+
 .cart-layout {
     display: flex;
     gap: 30px;
 }
 
 .main-content {
-    flex: 3; /* Prend environ 60% de la largeur */
+    flex: 3; 
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
 .order-summary-sidebar {
-    flex: 2; /* Prend environ 40% de la largeur */
+    flex: 2; 
     padding: 20px;
-    border: 1px solid #000; /* Bordure pour le bloc Résumé */
+    border: 1px solid #000; 
     display: flex;
     flex-direction: column;
     height: fit-content;
@@ -85,9 +87,9 @@ body {
     border-bottom: 1px solid #000;
 }
 
-/* 4. Section Articles dans le panier */
+
 .cart-items-section {
-    min-height: 200px; /* Hauteur pour simuler l'espace du panier */
+    min-height: 200px; 
 }
 
 .cart-items-placeholder {
@@ -95,7 +97,7 @@ body {
     min-height: 150px;
 }
 
-/* 5. Section Informations de livraison */
+
 .delivery-info-section {
     margin-top: 20px;
 }
@@ -132,7 +134,7 @@ body {
     margin-left: 5px;
 }
 
-/* 6. Section Résumé de la commande */
+
 .summary-sub-section h3 {
     font-size: 14px;
     font-weight: normal;
