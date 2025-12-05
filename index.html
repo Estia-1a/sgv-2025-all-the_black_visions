@@ -1,85 +1,90 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <link rel="stylesheet" href="Style_General.css">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon compte - Accueil</title>
-    <link rel="stylesheet" href="Style_General.css">
+    <title>Espace membre</title>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <span class="icon">🐱</span>
-                <span class="logo-text">Netflux</span>
-            </div>
-            
-            <nav>
-    <ul class="nav-links">
-        <li class="active"><a href="index.html">Accueil</a></li>
-        <li><a href="films.html">Films</a></li>
-        <li><a href="Series.html">Séries</a></li>
-        <li><a href="Livres.html">Livres</a></li>
+    <link rel="stylesheet" href="Style_General.css">
+
+    <!-- ===== TITRE DU SITEfff  ===== -->
+
+<h1 id="netflux-logo">NETFLUX</h1>
+
+<h1>Espace membre</h1>
+
+<nav>
+    <ul>
+        <li><a href="#connexion">Connexion</a></li>
+        <li><a href="#creer-compte">Créer un compte</a></li>
+       
     </ul>
 </nav>
-            
-            <div class="nav-right">
-                <div class="search-box">
-                    <input type="text" placeholder="search">
-                </div>
-                <a href="Panier.html" class="cart">
-                 <span class="cart-icon">🛒</span>
-                 <span class="cart-text">Mon panier</span>
-            </a>
-            </div>
-        </nav>
-    </header>
 
-    <main>
-        <section class="most-watched">
-            <h2>Les plus regardés :</h2>
-            <div class="content-grid">
-                <div class="content-item">
-                    <img src="Images/le-loup-de-wall-street.jpg" alt="Le Loup de wall street">
-                    <h3>Le Loup de wall street</h3>
-                </div>
-                <div class="content-item">
-                    <img src="Images/fury-film.jpg" alt="Fury">
-                    <h3>Fury</h3>
-                </div>
-                <div class="content-item">
-                    <img src="Images/ligne-verte-film.webp" alt="Ligne Verte">
-                    <h3>Ligne Verte</h3>
-                </div>
-                <div class="content-item">
-                    <img src="Images/shaft-film.jpg" alt="Shaft">
-                    <h3>Shaft</h3>
-                </div>
-            </div>
-        </section>
+<hr>
 
-        <section class="best-sellers">
-            <h2>Meilleurs ventes :</h2>
-            <div class="content-grid">
-                <div class="content-item">
-                    <img src="Images/petit-manuel.jpeg" alt="livre d'auto coaching">
-                    <h3>livre d'auto coaching</h3>
-                </div>
-                <div class="content-item">
-                    <img src="Images/investisseur%20intelligent.webp" alt="Livre d'investissement">
-                    <h3>Livre d'investissement</h3>
-                </div>
-                <div class="content-item">
-                    <img src="Images/sud-ouest.jpg" alt="Le Sud Ouest">
-                    <h3>Le Sud Ouest</h3>
-                </div>
-                <div class="content-item">
-                    <img src="Images/journal-geo.jpg" alt="Journal GEO">
-                    <h3>Journal GEO</h3>
-                </div>
-            </div>
-        </section>
-    </main>
+<h2 id="connexion">Connexion</h2>
+
+<p>Connectez-vous à votre compte.</p>
+<form action="Accueil.html" method="get">
+    <label for="email-connexion">E-mail :</label><br>
+    <input type="email" id="email-connexion" required><br><br>
+
+    <label for="mdp-connexion">Mot de passe :</label><br>
+    <input type="password" id="mdp-connexion" required><br><br>
+
+    <input type="submit" value="Se connecter">
+</form>
+
+
+<p>
+    <a href="#creer-compte">Créer un compte</a> |
+   
+</p>
+
+<hr>
+
+<h2 id="creer-compte">Créer un compte</h2>
+
+<p>Remplissez ce formulaire pour vous inscrire.</p>
+
+<form action="Accueil.html" method="get" onsubmit="return verifierMdp()">
+
+    <label for="pseudo">Nom d'utilisateur :</label><br>
+    <input type="text" id="pseudo" required><br><br>
+
+    <label for="email-inscription">E-mail :</label><br>
+    <input type="email" id="email-inscription" required><br><br>
+
+    <label for="mdp-inscription">Mot de passe :</label><br>
+    <input type="password" id="mdp-inscription" required><br><br>
+
+    <label for="mdp-confirmation">Confirmation du mot de passe :</label><br>
+    <input type="password" id="mdp-confirmation" required><br><br>
+
+    <input type="submit" value="Créer mon compte">
+</form>
+
+<script>
+function verifierMdp() {
+    let mdp1 = document.getElementById("mdp-inscription").value;
+    let mdp2 = document.getElementById("mdp-confirmation").value;
+
+    if (mdp1 !== mdp2) {
+        alert("Les mots de passe ne correspondent pas !");
+        return false; // empêche l’envoi du formulaire
+    }
+    return true; // autorise la redirection vers Accueil.html
+}
+</script>
+
+<p>
+    <a href="#connexion">Revenir à la connexion</a>
+</p>
+
+<hr>
+
+
+
 </body>
 </html>
