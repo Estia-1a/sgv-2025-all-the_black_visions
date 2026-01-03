@@ -139,60 +139,200 @@ section h2 {
 
 /* ========= FORMULAIRE (connexion / création compte) ========= */
 
-form {
-    max-width: 420px;
-    margin: 25px auto;
-    background: white;
-    padding: 30px;
-    border-radius: 14px;
-    border: 1px solid #dadfe6;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+body{
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(1200px 600px at 10% 10%, rgba(30,91,171,0.18), transparent 60%),
+    radial-gradient(1000px 500px at 90% 20%, rgba(27,114,232,0.16), transparent 55%),
+    linear-gradient(to bottom right, #eef3fb, #ffffff);
+  color: #0b2545;
 }
 
+/* On donne une “mise en page” à tout le contenu (sans wrapper HTML) */
+body > *{
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Logo NETFLUX */
+#netflux-logo{
+  margin: 34px auto 8px auto;
+  text-align: center;
+  letter-spacing: 6px;
+  font-weight: 900;
+  font-size: clamp(38px, 5vw, 56px);
+  color: #1e5bab;
+  text-shadow: 0 10px 25px rgba(30, 91, 171, 0.18);
+}
+
+/* Titre "Espace membre" */
+h1:not(#netflux-logo){
+  margin: 0 auto 22px auto;
+  text-align: center;
+  font-size: clamp(22px, 2.2vw, 30px);
+  font-weight: 800;
+  color: #0d3d85;
+  opacity: 0.95;
+}
+
+/* Navigation en "pills" */
+nav{
+  margin: 10px auto 10px auto;
+  padding: 14px 18px;
+  background: rgba(255,255,255,0.72);
+  border: 1px solid rgba(30, 91, 171, 0.12);
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+  backdrop-filter: blur(10px);
+}
+
+nav ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+nav a{
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  color: #0d3d85;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(30, 91, 171, 0.18);
+  background: rgba(244,247,250,0.75);
+  transition: transform .2s ease, background .2s ease, box-shadow .2s ease, color .2s ease;
+}
+
+nav a:hover{
+  color: #1b72e8;
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 10px 18px rgba(27,114,232,0.14);
+  transform: translateY(-1px);
+}
+
+/* Séparateurs */
+hr{
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(13,61,133,0.25), transparent);
+  margin: 26px auto;
+}
+
+/* Titres de sections */
+h2{
+  margin: 18px auto 10px auto;
+  text-align: center;
+  font-size: 26px;
+  color: #1e5bab;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.08);
+}
+
+/* Petit texte d’intro */
+p{
+  text-align: center;
+  margin: 8px auto 10px auto;
+  color: rgba(11,37,69,0.78);
+  line-height: 1.6;
+}
+
+/* Cartes formulaires (tu avais déjà une base, là on upgrade) */
+form{
+  max-width: 520px;
+  margin: 18px auto;
+  padding: 28px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.82);
+  border: 1px solid rgba(30, 91, 171, 0.14);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.09);
+  backdrop-filter: blur(10px);
+}
+
+/* Labels plus lisibles */
+label{
+  display: inline-block;
+  font-weight: 700;
+  color: #0d3d85;
+  margin-bottom: 4px;
+}
+
+/* Inputs plus modernes */
 input[type="email"],
 input[type="text"],
-input[type="password"] {
-    width: 100%;
-    padding: 12px;
-    margin-top: 6px;
-    margin-bottom: 18px;
-    border-radius: 8px;
-    border: 1px solid #b6bec8;
-    background-color: #f8fafc;
-    font-size: 16px;
-    transition: 0.2s;
+input[type="password"]{
+  width: 100%;
+  padding: 13px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(13,61,133,0.22);
+  background: rgba(248,250,252,0.9);
+  font-size: 16px;
+  outline: none;
+  transition: border-color .2s ease, box-shadow .2s ease, transform .15s ease, background .2s ease;
 }
 
 input[type="email"]:focus,
 input[type="text"]:focus,
-input[type="password"]:focus {
-    border-color: #1e5bab;
-    background: white;
-    box-shadow: 0 0 5px rgba(30, 91, 171, 0.3);
+input[type="password"]:focus{
+  border-color: rgba(30, 91, 171, 0.6);
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(30, 91, 171, 0.15);
 }
 
-/* Boutons */
+/* Bouton principal plus “app” */
 input[type="submit"],
-button {
-    width: 100%;
-    padding: 12px;
-    background: #1e5bab;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 17px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.25s;
+button{
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 6px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(135deg, #1e5bab, #1b72e8);
+  box-shadow: 0 14px 28px rgba(27,114,232,0.22);
+  transition: transform .15s ease, box-shadow .2s ease, filter .2s ease;
 }
 
 input[type="submit"]:hover,
-button:hover {
-    background: #154a8b;
-    transform: scale(1.02);
+button:hover{
+  transform: translateY(-1px);
+  filter: brightness(1.03);
+  box-shadow: 0 18px 34px rgba(27,114,232,0.26);
 }
 
-/* ========= SPACING ========= */
-section {
-    margin: 40px auto;
+input[type="submit"]:active,
+button:active{
+  transform: translateY(0px) scale(0.99);
+}
+
+/* Liens sous les formulaires */
+p a{
+  color: #1b72e8;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 10px;
+  transition: background .2s ease, transform .2s ease;
+}
+
+p a:hover{
+  background: rgba(27,114,232,0.10);
+  transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 600px){
+  nav{ margin-left: 14px; margin-right: 14px; }
+  form{ margin-left: 14px; margin-right: 14px; padding: 22px; }
+  body > *{ padding-left: 14px; padding-right: 14px; box-sizing: border-box; }
 }
