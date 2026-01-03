@@ -7,15 +7,30 @@
     <title>Mon compte - Accueil</title>
     <link rel="stylesheet" href="Style_General.css">
 </head>
+
 <body>
     <header>
         <nav class="navbar">
-            <div class="logo">
-                <span class="icon">🐱</span>
-                <span class="logo-text">Netflux</span>
-            </div>
-            
-            <nav>
+    <div class="logo">
+        <span class="icon">🐱</span>
+        <span class="logo-text">Netflux</span>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="Accueil.html">Accueil</a></li>
+        <li><a href="films.html">Films</a></li>
+        <li><a href="Series.html">Séries</a></li>
+        <li><a href="Livres.html">Livres</a></li>
+    </ul>
+
+    <div class="top-right">
+        <div id="user-name" class="user-name"></div>
+        <a href="Panier.html" class="cart">
+            <span class="cart-icon">🛒</span>
+            <span class="cart-text">Mon panier</span>
+        </a>
+    </div>
+</nav>
     <ul class="nav-links">
         <li class="active"><a href="Accueil.html">Accueil</a></li>
         <li><a href="films.html">Films</a></li>
@@ -24,15 +39,26 @@
     </ul>
 </nav>
             
-            <div class="nav-right">
-                <div class="search-box">
-                    <input type="text" placeholder="search">
-                </div>
-                <a href="Panier.html" class="cart">
-                 <span class="cart-icon">🛒</span>
-                 <span class="cart-text">Mon panier</span>
-            </a>
-            </div>
+            <nav class="navbar">
+   
+
+    <div class="top-right">
+        <div id="user-name" class="user-name"></div>
+
+        <a href="Panier.html" class="cart">
+            <span class="cart-icon">🛒</span>
+            <span class="cart-text">Mon panier</span>
+        </a>
+    </div>
+</nav>
+    <div class="search-box">
+        <input type="text" placeholder="search">
+    </div>
+
+    <div id="user-name" class="user-name"></div>
+
+    
+</div>
         </nav>
     </header>
 
@@ -81,5 +107,19 @@
             </div>
         </section>
     </main>
+<script>
+const params = new URLSearchParams(window.location.search);
+const user = params.get("user");
+
+let displayName = user;
+
+if (user && user.includes("@")) {
+    displayName = user.split("@")[0];
+}
+
+if (displayName) {
+    document.getElementById("user-name").textContent = displayName;
+}
+</script>
 </body>
 </html>

@@ -1,52 +1,143 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(to bottom right, #dfe9f3, #ffffff);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(to bottom right, #e8eef5, #ffffff);
     margin: 0;
-    padding: 30px;
-}
-#netflux-logo {
-    text-align: center;
-    font-size: 48px;
-    font-weight: bold;
-    color: #d40000; /* rouge style Netflix */
-    letter-spacing: 4px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
-    font-family: Arial, Helvetica, sans-serif;
-    }
-
-h1 {
-    text-align: center;
-    color: #2c3e50;
-    font-weight: bold;
-    margin-bottom: 40px;
 }
 
+/* ========= NAVBAR ========= */
+header {
+    background: #ffffffdd;
+    backdrop-filter: blur(8px);
+    padding: 15px 40px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 auto 40px auto;
+/* Conteneur principal */
+.navbar {
     display: flex;
-    justify-content: center;
-    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
 }
 
-nav a {
+/* -------- LOGO -------- */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-text {
+    font-size: 28px;
+    font-weight: 800;
+    color: #1e5bab;
+}
+
+/* -------- MENU CENTRÉ -------- */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links a {
     text-decoration: none;
-    font-size: 16px;
-    color: #0056b3;
+    font-size: 20px;
+    font-weight: 600;
+    color: #0d3d85;
+    transition: 0.2s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: #1b72e8;
+    transform: scale(1.05);
+}
+
+/* -------- PARTIE DROITE (NOM + PANIER) -------- */
+.top-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-name {
     font-weight: bold;
+    font-size: 18px;
+    color: #0A3D91;
 }
 
-nav a:hover {
-    color: #003f80;
-    text-decoration: underline;
+.cart {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #0d3d85;
+    transition: 0.2s ease;
 }
 
+.cart:hover {
+    color: #1b72e8;
+    transform: scale(1.05);
+}
 
+/* ========= BARRE DE RECHERCHE ========= */
+.search-box {
+    max-width: 900px;
+    margin: 20px auto 35px auto;
+    padding: 0 20px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: 2px solid #c0c9d8;
+    background: #f4f7fa;
+    font-size: 17px;
+    transition: 0.2s;
+}
+
+.search-box input:focus {
+    border-color: #1e5bab;
+    background: white;
+    box-shadow: 0 0 6px #1e5bab55;
+    outline: none;
+}
+
+/* ========= SECTIONS ET TITRES ========= */
+section h2 {
+    font-size: 28px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: #1e5bab;
+    text-shadow: 1px 1px 3px #00000020;
+}
+
+/* ========= GRILLE DE CONTENU ========= */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 28px;
+    padding: 20px 40px;
+}
+
+.content-item img {
+    width: 100%;
+    border-radius: 12px;
+    transition: 0.25s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.content-item img:hover {
+    transform: scale(1.04);
+}
+
+/* ========= FORMULAIRE (connexion / création compte) ========= */
 
 form {
     max-width: 420px;
@@ -54,22 +145,8 @@ form {
     background: white;
     padding: 30px;
     border-radius: 14px;
-    border: 1px solid #d0d4d9;
+    border: 1px solid #dadfe6;
     box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-}
-
-
-h2 {
-    text-align: center;
-    color: #1e5bab;
-    margin-top: 40px;
-}
-
-
-
-label {
-    font-weight: bold;
-    color: #2c3e50;
 }
 
 input[type="email"],
@@ -82,21 +159,21 @@ input[type="password"] {
     border-radius: 8px;
     border: 1px solid #b6bec8;
     background-color: #f8fafc;
-    transition: 0.2s ease;
+    font-size: 16px;
+    transition: 0.2s;
 }
 
 input[type="email"]:focus,
 input[type="text"]:focus,
 input[type="password"]:focus {
     border-color: #1e5bab;
-    outline: none;
-    background-color: #ffffff;
+    background: white;
     box-shadow: 0 0 5px rgba(30, 91, 171, 0.3);
 }
 
-
-
-input[type="submit"] {
+/* Boutons */
+input[type="submit"],
+button {
     width: 100%;
     padding: 12px;
     background: #1e5bab;
@@ -105,35 +182,17 @@ input[type="submit"] {
     border-radius: 8px;
     font-size: 17px;
     cursor: pointer;
-    transition: 0.25s ease;
     font-weight: bold;
+    transition: 0.25s;
 }
 
-input[type="submit"]:hover {
+input[type="submit"]:hover,
+button:hover {
     background: #154a8b;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    transform: scale(1.02);
 }
 
-
-p {
-    text-align: center;
-}
-
-p a {
-    color: #1e5bab;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-p a:hover {
-    text-decoration: underline;
-}
-
-
-hr {
-    border: none;
-    height: 1px;
-    background-color: #c9cdd2;
-    margin: 50px auto;
-    width: 70%;
+/* ========= SPACING ========= */
+section {
+    margin: 40px auto;
 }

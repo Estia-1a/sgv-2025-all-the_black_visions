@@ -27,15 +27,14 @@
 
 <p>Connectez-vous à votre compte.</p>
 <form action="Accueil.html" method="get">
-    <label for="email-connexion">E-mail :</label><br>
-    <input type="email" id="email-connexion" required><br><br>
+    <label>E-mail :</label><br>
+    <input type="email" id="email-connexion" name="user" required><br><br>
 
-    <label for="mdp-connexion">Mot de passe :</label><br>
+    <label>Mot de passe :</label><br>
     <input type="password" id="mdp-connexion" required><br><br>
 
     <input type="submit" value="Se connecter">
 </form>
-
 
 <p>
     <a href="#creer-compte">Créer un compte</a> |
@@ -49,17 +48,16 @@
 <p>Remplissez ce formulaire pour vous inscrire.</p>
 
 <form action="Accueil.html" method="get" onsubmit="return verifierMdp()">
+    <label>Nom d'utilisateur :</label><br>
+    <input type="text" id="pseudo" name="user" required><br><br>
 
-    <label for="pseudo">Nom d'utilisateur :</label><br>
-    <input type="text" id="pseudo" required><br><br>
+    <label>E-mail :</label><br>
+    <input type="email" required><br><br>
 
-    <label for="email-inscription">E-mail :</label><br>
-    <input type="email" id="email-inscription" required><br><br>
-
-    <label for="mdp-inscription">Mot de passe :</label><br>
+    <label>Mot de passe :</label><br>
     <input type="password" id="mdp-inscription" required><br><br>
 
-    <label for="mdp-confirmation">Confirmation du mot de passe :</label><br>
+    <label>Confirmation :</label><br>
     <input type="password" id="mdp-confirmation" required><br><br>
 
     <input type="submit" value="Créer mon compte">
