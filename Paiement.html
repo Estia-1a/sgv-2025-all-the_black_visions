@@ -1,105 +1,101 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial_2.0">
-      <title>Mon panier - Netflux</title>
-    <title>Paiement - Netflux</title>
-    <link rel="stylesheet" href="styles/infopaiement.css"> </head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paiement - Netflux</title>
+  <link rel="stylesheet" href="styles/infopaiement.css">
+</head>
+
 <body>
+  <a href="Accueil.html" class="accueil-btn">Accueil</a>
 
-        <form action="Accueil.html" method="get">
-        <button class="accueil-btn">Accueil</button>
-                    
-                 </form>
-        
-        <h1 class="main-title">Passer au paiement <span class="cart-icon">💳</span></h1>
+  <h1 class="main-title">Passer au paiement <span class="cart-icon">💳</span></h1>
 
-        <div class="cart-layout">
-            
-            <main class="main-content">
-                
-                <section class="payment-info-section">
-                    <h2 class="section-title">Coordonnées de paiement</h2>
-                    
-                    <form class="payment-form">
-                        
-                        <div class="form-group">
-                            <label for="card-type">Méthode de Paiement</label>
-                            <select id="card-type">
-                                <option>Carte Bancaire</option>
-                                <option>PayPal</option>
-                                <option>Autre...</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="card-number">Numéro de Carte</label>
-                            <input type="text" id="card-number" placeholder="XXXX XXXX XXXX XXXX" required>
-                        </div>
+  <div class="cart-layout">
+    <main class="main-content">
+      <section class="payment-info-section">
+        <h2 class="section-title">Coordonnées de paiement</h2>
 
-                        <div class="form-group">
-                            <label for="card-name">Nom sur la Carte</label>
-                            <input type="text" id="card-name" placeholder="Nom Prénom" required>
-                        </div>
+        <!-- ✅ Un seul form, pas imbriqué -->
+        <form class="payment-form" action="Accueil.html" method="get">
+          <div class="form-group">
+            <label for="card-type">Méthode de Paiement</label>
+            <select id="card-type" name="card_type">
+              <option value="card">Carte Bancaire</option>
+              <option value="paypal">PayPal</option>
+              <option value="other">Autre...</option>
+            </select>
+          </div>
 
-                        <div class="form-row">
-                            <div class="form-group expiry-date">
-                                <label for="expiry">Date d'Expiration</label>
-                                <input type="text" id="expiry" placeholder="MM/AA" required>
-                            </div>
-                            <div class="form-group cvc-code">
-                                <label for="cvc">Code CVC/CVV</label>
-                                <input type="text" id="cvc" placeholder="XXX" required>
-                            </div>
-                        </div>
+          <div class="form-group">
+            <label for="card-number">Numéro de Carte</label>
+            <input type="text" id="card-number" name="card_number" placeholder="XXXX XXXX XXXX XXXX" required>
+          </div>
 
-                        <div class="form-group">
-                            <input type="checkbox" id="save-card">
-                            <label for="save-card">Enregistrer cette carte pour un usage futur</label>
-                        </div>
+          <div class="form-group">
+            <label for="card-name">Nom sur la Carte</label>
+            <input type="text" id="card-name" name="card_name" placeholder="Nom Prénom" required>
+          </div>
 
-                    </form>
-                </section>
-                
-                <section class="delivery-summary-section">
-                    <h2 class="section-title">Adresse de Facturation</h2>
-                    <div class="billing-address-placeholder">
-                        <p>Utiliser l'adresse de livraison : [Adresse, Code Postal, Ville]</p>
-                        <button class="edit-btn">Modifier</button>
-                    </div>
-                </section>
+          <div class="form-row">
+            <div class="form-group expiry-date">
+              <label for="expiry">Date d'Expiration</label>
+              <input type="text" id="expiry" name="expiry" placeholder="MM/AA" required>
+            </div>
 
-            </main>
+            <div class="form-group cvc-code">
+              <label for="cvc">Code CVC/CVV</label>
+              <input type="text" id="cvc" name="cvc" placeholder="XXX" required>
+            </div>
+          </div>
 
-            <aside class="order-summary-sidebar">
-                <h2 class="section-title">Résumé de la commande</h2>
-                
-                <div class="summary-details">
-                    <div class="summary-sub-section">
-                        <h3>Articles</h3>
-                        <div class="item-line">
-                           
-                        
+          <div class="form-group">
+            <input type="checkbox" id="save-card" name="save_card" value="yes">
+            <label for="save-card">Enregistrer cette carte pour un usage futur</label>
+          </div>
 
-                    <div class="summary-sub-section">
-                        <h3>Livraison</h3>
-                        <div class="item-line">
-                            <span>Livraison Rapide</span>
-                        
-                        </div>
-                        <hr>
-                    </div>
-                </div>
+          <button class="payment-btn confirm" type="submit">Confirmer le paiement</button>
+        </form>
+      </section>
 
-                <div class="total-section">
-                    <h3>Montant Total</h3>
-                    <span class="total-amount">38,97$</span> </div>
-                
-                <button class="payment-btn confirm">Confirmer le paiement</button>
-            </aside>
+      <section class="delivery-summary-section">
+        <h2 class="section-title">Adresse de Facturation</h2>
+        <div class="billing-address-placeholder">
+          <p>Utiliser l'adresse de livraison : [Adresse, Code Postal, Ville]</p>
+          <button class="edit-btn" type="button">Modifier</button>
         </div>
-    </div>
+      </section>
+    </main>
 
+    <aside class="order-summary-sidebar">
+      <h2 class="section-title">Résumé de la commande</h2>
+
+      <div class="summary-details">
+        <div class="summary-sub-section">
+          <h3>Articles</h3>
+          <div class="item-line">
+            <span>Articles sélectionnés</span>
+            <span>—</span>
+          </div>
+          <hr>
+        </div>
+
+        <div class="summary-sub-section">
+          <h3>Livraison</h3>
+          <div class="item-line">
+            <span>Livraison Rapide</span>
+            <span>5,99$</span>
+          </div>
+          <hr>
+        </div>
+      </div>
+
+      <div class="total-section">
+        <h3>Montant Total</h3>
+        <span class="total-amount">38,97$</span>
+      </div>
+    </aside>
+  </div>
 </body>
 </html>

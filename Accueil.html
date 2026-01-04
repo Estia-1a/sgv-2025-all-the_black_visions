@@ -1,117 +1,102 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <link rel="stylesheet" href="Style_General.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon compte - Accueil</title>
-    <link rel="stylesheet" href="Style_General.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon compte - Accueil</title>
+  <link rel="stylesheet" href="Style_General.css">
 </head>
 
 <body>
-    <header>
-        <nav class="navbar">
-    <div class="logo">
+  <header>
+    <nav class="navbar">
+      <div class="logo">
         <span class="icon">🐱</span>
         <span class="logo-text">Netflux</span>
-    </div>
+      </div>
 
-  
-
-    <div class="top-right">
-        <div id="user-name" class="user-name"></div>
-        <a href="Panier.html" class="cart">
-            <span class="cart-icon">🛒</span>
-            <span class="cart-text">Mon panier</span>
-        </a>
-    </div>
-</nav>
-    <ul class="nav-links">
+      <ul class="nav-links">
         <li class="active"><a href="Accueil.html">Accueil</a></li>
-        <li><a href="films.html">Films</a></li>
+        <li><a href="Films.html">Films</a></li>
         <li><a href="Series.html">Séries</a></li>
         <li><a href="Livres.html">Livres</a></li>
-    </ul>
-</nav>
-            
-            <nav class="navbar">
-   
+      </ul>
 
-    <div class="top-right">
+      <div class="top-right">
+     
         <div id="user-name" class="user-name"></div>
 
-       
-    </div>
-</nav>
+        <a href="Panier.html" class="cart">
+          <span class="cart-icon">🛒</span>
+          <span class="cart-text">Mon panier</span>
+        </a>
+      </div>
+    </nav>
+
     <div class="search-box">
-        <input type="text" placeholder="search">
+      <input type="text" placeholder="search">
     </div>
+  </header>
 
-    <div id="user-name" class="user-name"></div>
+  <main>
+    <section class="most-watched">
+      <h2>Les plus regardés :</h2>
+      <div class="content-grid">
+        <div class="content-item">
+          <img src="Images/le-loup-de-wall-street.jpg" alt="Le Loup de wall street">
+          <h3>Le Loup de wall street</h3>
+        </div>
+        <div class="content-item">
+          <img src="Images/fury-film.jpg" alt="Fury">
+          <h3>Fury</h3>
+        </div>
+        <div class="content-item">
+          <img src="Images/ligne-verte-film.webp" alt="Ligne Verte">
+          <h3>Ligne Verte</h3>
+        </div>
+        <div class="content-item">
+          <img src="Images/shaft-film.jpg" alt="Shaft">
+          <h3>Shaft</h3>
+        </div>
+      </div>
+    </section>
 
-    
-</div>
-        </nav>
-    </header>
+    <section class="best-sellers">
+      <h2>Meilleurs ventes :</h2>
+      <div class="content-grid">
+        <div class="content-item">
+          <img src="Images/petit-manuel.jpeg" alt="livre d'auto coaching">
+          <h3>livre d'auto coaching</h3>
+        </div>
+        <div class="content-item">
+          <img src="Images/investisseur%20intelligent.webp" alt="Livre d'investissement">
+          <h3>Livre d'investissement</h3>
+        </div>
+        <div class="content-item">
+          <img src="Images/sud-ouest.jpg" alt="Le Sud Ouest">
+          <h3>Le Sud Ouest</h3>
+        </div>
+        <div class="content-item">
+          <img src="Images/journal-geo.jpg" alt="Journal GEO">
+          <h3>Journal GEO</h3>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    <main>
-        <section class="most-watched">
-            <h2>Les plus regardés :</h2>
-            <div class="content-grid">
-                <div class="content-item">
-                    <img src="Images/le-loup-de-wall-street.jpg" alt="Le Loup de wall street">
-                    <h3>Le Loup de wall street</h3>
-                </div>
-                <div class="content-item">
-                    <img src="Images/fury-film.jpg" alt="Fury">
-                    <h3>Fury</h3>
-                </div>
-                <div class="content-item">
-                    <img src="Images/ligne-verte-film.webp" alt="Ligne Verte">
-                    <h3>Ligne Verte</h3>
-                </div>
-                <div class="content-item">
-                    <img src="Images/shaft-film.jpg" alt="Shaft">
-                    <h3>Shaft</h3>
-                </div>
-            </div>
-        </section>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const user = params.get("user");
 
-        <section class="best-sellers">
-            <h2>Meilleurs ventes :</h2>
-            <div class="content-grid">
-                <div class="content-item">
-                    <img src="Images/petit-manuel.jpeg" alt="livre d'auto coaching">
-                    <h3>livre d'auto coaching</h3>
-                </div>
-                <div class="content-item">
-                    <img src="Images/investisseur%20intelligent.webp" alt="Livre d'investissement">
-                    <h3>Livre d'investissement</h3>
-                </div>
-                <div class="content-item">
-                    <img src="Images/sud-ouest.jpg" alt="Le Sud Ouest">
-                    <h3>Le Sud Ouest</h3>
-                </div>
-                <div class="content-item">
-                    <img src="Images/journal-geo.jpg" alt="Journal GEO">
-                    <h3>Journal GEO</h3>
-                </div>
-            </div>
-        </section>
-    </main>
-<script>
-const params = new URLSearchParams(window.location.search);
-const user = params.get("user");
+    let displayName = user;
 
-let displayName = user;
+    if (user && user.includes("@")) {
+      displayName = user.split("@")[0];
+    }
 
-if (user && user.includes("@")) {
-    displayName = user.split("@")[0];
-}
-
-if (displayName) {
-    document.getElementById("user-name").textContent = displayName;
-}
-</script>
+    if (displayName) {
+      document.getElementById("user-name").textContent = displayName;
+    }
+  </script>
 </body>
 </html>
